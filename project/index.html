@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Proyecto final Ingeniera 3</title>
+        
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        
+        <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        
+        <link href="/node_modules/ng-toast/dist/ngToast.min.css" rel="stylesheet" />
+        <link href="/node_modules/ui-select/dist/select.min.css" rel="stylesheet" />
+        
+        <link rel="stylesheet" href="/project/css/index.css" />
+        
+    </head>
+    
+    <body class="home" ng-app="app">
+    <toast></toast>
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-3 col-sm-2 hidden-xs display-table-cell v-align box" id="navigation" ng-controller="navController as vm">
+                <div class="logo">
+                    <a hef="index.html">
+                        <img src="/project/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
+                       
+                    </a>
+                </div>
+                <div class="navi" ng-cloak>
+                    <ul>
+                        <li ng-class="{'active': vm.active == '/requerimientos'}"><a href="#/requerimientos"  ng-click="vm.changeOfLocation('/requerimientos')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Requerimientos de calidad</span></a></li>
+                        <li>
+                            <a href="" ng-click="vm.mostrar_metricas =! vm.mostrar_metricas; vm.mostrar_riesgos = false">
+                               <i class="fa fa-chevron-right" aria-hidden="true" ng-show="!vm.mostrar_metricas" style="float: right;"></i>
+                               <i class="fa fa-chevron-down" aria-hidden="true" ng-show="vm.mostrar_metricas" style="float: right;"></i>
+                               <span>Métricas</span>
+                            </a>
+                        </li>
+                        <li ng-show="vm.mostrar_metricas">
+                            <ul>
+                                <li ng-class="{'active': vm.active == '/metricas/identificacion'}"><a href="#/metricas/identificacion" ng-click="vm.changeOfLocation('/metricas/identificacion')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Identificación</span></a></li>
+                                <li ng-class="{'active': vm.active == '/metricas/implementacion'}"><a href="#/metricas/implementacion" ng-click="vm.changeOfLocation('/metricas/implementacion')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Implementación</span></a></li>
+                                <li ng-class="{'active': vm.active == '/metricas/analisis'}"><a href="#/metricas/analisis" ng-click="vm.changeOfLocation('/metricas/analisis')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Analisis de resultados</span></a></li>
+                                <li ng-class="{'active': vm.active == '/metricas/validacion'}"><a href="#/metricas/validacion" ng-click="vm.changeOfLocation('/metricas/validacion')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Validación</span></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="" ng-click="vm.mostrar_riesgos =! vm.mostrar_riesgos; vm.mostrar_metricas = false">
+                               <i class="fa fa-chevron-right" aria-hidden="true" ng-show="!vm.mostrar_riesgos" style="float: right;"></i>
+                               <i class="fa fa-chevron-down" aria-hidden="true" ng-show="vm.mostrar_riesgos" style="float: right;"></i>
+                               <span>Riesgos</span>
+                            </a>
+                        </li>
+                        <li ng-show="vm.mostrar_riesgos">
+                            <ul>
+                                <li ng-class="{'active': vm.active == '/riesgos/identificacion'}"><a href="#/riesgos/identificacion" ng-click="vm.changeOfLocation('/riesgos/identificacion')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Identificación</span></a></li>
+                                <li ng-class="{'active': vm.active == '/riesgos/analisis'}"><a href="#/riesgos/analisis" ng-click="vm.changeOfLocation('/riesgos/analisis')"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Análisis y proyección </span></a></li>
+                                <li ng-class="{'active': vm.active == '/riesgos/estrategia_planificacion'}"><a href="#/riesgos/estrategia_planificacion" ng-click="vm.changeOfLocation('/riesgos/estrategia_planificacion')"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Estrategia y planificación</span></a></li>
+                                <li ng-class="{'active': vm.active == '/riesgos/seguimiento'}"><a href="#/riesgos/seguimiento" ng-click="vm.changeOfLocation('/riesgos/seguimiento')"><i class="fa fa-list" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Seguimiento</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-10 display-table-cell v-align">
+               
+               <div ng-view=""></div>
+               
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-i18n/angular-locale_es-ar.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    
+    <script src="/node_modules/ng-toast/dist/ngToast.min.js"></script>
+    <script src="/node_modules/ui-select/dist/select.min.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    
+    <script src="/project/js/app.module.js"></script>
+    <script src="/project/js/app.run.js"></script>
+    <script src="/project/js/app.routes.js"></script>
+    <script src="/project/js/app.config.js"></script>
+    
+     <script src="/project/components/components.module.js"></script>
+     <script src="/project/components/header/header.component.js"></script>
+    
+    <script src="/project/nav/nav.module.js"></script>
+    <script src="/project/nav/nav.controller.js"></script>
+    
+    <script src="/project/requerimientos/requerimientos.module.js"></script>
+    <script src="/project/requerimientos/requerimientos.controller.js"></script>
+    <script src="/project/requerimientos/alta/alta.controller.js"></script>
+    
+    <script src="/project/metricas/metricas.module.js"></script>
+    <script src="/project/metricas/analisis/analisis.controller.js"></script>
+    <script src="/project/metricas/identificacion/identificacion.controller.js"></script>
+    <script src="/project/metricas/implementacion/implementacion.controller.js"></script>
+    <script src="/project/metricas/validacion/validacion.controller.js"></script>
+    
+    <script src="/project/riesgos/riesgos.module.js"></script>
+    <script src="/project/riesgos/analisis/analisis.controller.js"></script>
+    <script src="/project/riesgos/identificacion/identificacion.controller.js"></script>
+    <script src="/project/riesgos/estrategia_planificacion/estrategia_planificacion.controller.js"></script>
+    <script src="/project/riesgos/seguimiento/seguimiento.controller.js"></script>
+</html>
