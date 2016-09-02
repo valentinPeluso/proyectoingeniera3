@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app.metricas')
-    .controller('analisisController', analisisController)
+    .controller('analisisMetricasController', analisisController)
     
     analisisController.$inject = [];
     

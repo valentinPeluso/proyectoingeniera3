@@ -15,24 +15,15 @@
                     <th>Valor</th>
                     <th>Costo</th>
                     <th>Agenda</th>
-                    <th>Garantías e intereses</th>
+                    <th>Garantías</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr ng-repeat="req in vm.requerimientos | orderBy: '-importancia.id' track by $index">
+                    <td>{{req.descripcion}}</td>
+                    <td>{{req.importancia.label}}</td>
+                    <td>{{req.metrica.label}}</td>
+                    <td>{{req.valor}}%</td>
                     <td></td>
                     <td></td>
                     <td></td>

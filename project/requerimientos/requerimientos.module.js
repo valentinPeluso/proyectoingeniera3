@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('app.requerimientos', [])
+    angular.module('app.requerimientos', [
+        'app.metricas.services'
+        ])
     
 })();

@@ -21,7 +21,7 @@
             
             .when('/metricas/identificacion', {
                 templateUrl: '/project/metricas/identificacion/identificacion.html',
-                controller: 'identificacionController',
+                controller: 'identificacionMetricasController',
                 controllerAs: 'vm'
             })
             .when('/metricas/implementacion', {
@@ -31,7 +31,7 @@
             })
             .when('/metricas/analisis', {
                 templateUrl: '/project/metricas/analisis/analisis.html',
-                controller: 'analisisController',
+                controller: 'analisisMetricasController',
                 controllerAs: 'vm'
             })
             .when('/metricas/validacion', {
@@ -42,7 +42,7 @@
             
             .when('/riesgos/identificacion', {
                 templateUrl: '/project/riesgos/identificacion/identificacion.html',
-                controller: 'identificacionController',
+                controller: 'identificacionRiesgosController',
                 controllerAs: 'vm'
             })
             .when('/riesgos/estrategia_planificacion', {
@@ -52,7 +52,7 @@
             })
             .when('/riesgos/analisis', {
                 templateUrl: '/project/riesgos/analisis/analisis.html',
-                controller: 'analisisController',
+                controller: 'analisisRiesgosController',
                 controllerAs: 'vm'
             })
             .when('/riesgos/seguimiento', {
