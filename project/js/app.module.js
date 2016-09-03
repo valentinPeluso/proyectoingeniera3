@@ -18,7 +18,8 @@
        
        'app.components',
        'app.filters',
-       'app.services'
+       'app.services',
+       'xeditable'
         
        
     ])

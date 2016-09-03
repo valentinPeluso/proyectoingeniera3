@@ -18,7 +18,7 @@
         function  getResposables() {
             return [
                 {
-                    id: 0,
+                    id: 10,
                     label: 'Juan'
                 },
                 {
@@ -63,7 +63,7 @@
         function getCategorias() {
             return [
                 {
-                    id: 0,
+                    id: 3,
                     label: 'Del proyecto'
                 },
                 {
@@ -79,7 +79,7 @@
         function getEstrategias() {
             return [
                 {
-                    id: 0,
+                    id: 3,
                     label: 'Estrategía de anulación'
                 },
                 {
@@ -95,7 +95,7 @@
         function getImpactos() {
             return [
                 {
-                    id: 0,
+                    id: 6,
                     label: 'Muy bajo'
                 },
                 {

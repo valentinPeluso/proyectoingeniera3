@@ -28,11 +28,11 @@
                 },
                 {
                     id: 3,
-                    label: 'Cantidad de errores esperados'
+                    label: 'Porcentaje de errores esperados'
                 },
                 {
                     id: 4,
-                    label: 'Cantidad de pruebas que se necesitan realizar'
+                    label: 'Porcentaje de pruebas que se necesitan realizar'
                 },
                 {
                     id: 5,

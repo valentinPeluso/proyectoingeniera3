@@ -1,0 +1,61 @@
+<header-component header-title="vm.config_header.title"></header-component>
+<div class="row form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+        <a href="#/riesgos/identificacion" class="btn btn-success pull-right"><i class="fa fa-plus-square" aria-hidden="true"></i> Identificación de riesgo</a>
+    </div>
+</div>
+<hr />
+<div class="row form-group">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-condensed">
+            <thead>
+               
+                <tr>
+                    <th style="width: 25%;">Riesgo</th>
+                    <th style="width: 10%;">Probabilidad</th>
+                    <th style="width: 10%;">Impacto</th>
+                    <th style="width: 20%;">Estrategía</th>
+                    <th style="width: 10%;">Responsable</th>
+                    <th style="width: 10%;">¿Ocurrió?</th>
+                    <th style="width: 15%;">Planificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="riesgo in vm.riesgos | orderBy: '-impacto.id' | buscador track by $index">
+                    <td>{{riesgo.descripcion}}</td>
+                    <td>
+                        <a href="#" editable-text="riesgo.probabilidad">{{ riesgo.probabilidad || "-" }}</a>
+                    </td>
+                    <td>
+                        <a href="#" editable-select="riesgo.impacto" e-ng-options="s.id as s.label for s in vm.impacto_riesgos">
+                            {{ vm.showImpacto(riesgo) }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" editable-select="riesgo.estrategia" e-ng-options="s.id as s.label for s in vm.estrategias_riesgos">
+                            {{ vm.showEstrategia(riesgo) }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" editable-select="riesgo.responsable" e-ng-options="s.id as s.label for s in vm.responsables">
+                            {{ vm.showResponsable(riesgo) }}
+                        </a>
+                        {{riesgo.responsable.label}}
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group">
+                          <button type="button" class="btn btn-sm" ng-disabled="riesgo.estado.id == 1" ng-class="{'btn-danger': riesgo.estado.id == 1,'btn-default': riesgo.estado.id == 0}">Si</button>
+                          <button type="button" class="btn btn-sm" ng-disabled="riesgo.estado.id == 0" ng-class="{'btn-success': riesgo.estado.id == 0,'btn-default': riesgo.estado.id == 1}">No</button>
+                        </div>
+                    </td>
+                    <td>
+                         <div class="btn-group" role="group">
+                          <button type="button" class="btn btn-sm btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button>
+                          <button type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square" aria-hidden="true"></i> Editar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
