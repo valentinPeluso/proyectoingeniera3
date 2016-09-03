@@ -11,18 +11,21 @@
         
          vm.config_header = {
             title: 'Identificación de Riesgos',
-            breadcrumbs: [
-                {
-                    link: false,
-                    label: 'Alta',
-                    active: true,
-                },
-            ]
         }
         
         vm.categoria_riesgos = riesgosService.getCategorias();
         vm.impacto_riesgos = riesgosService.getImpactos();
         vm.estrategias_riesgos = riesgosService.getEstrategias();
+        vm.responsables_riesgos = riesgosService.getResposables();
+        
+        vm.riesgo = {
+            descripcion: "",
+            probabilidad: "",
+              impacto: "",
+              estrategia: "",
+              responsable: "",
+              estado: "No Ocurrido"
+        }
         
     }
     

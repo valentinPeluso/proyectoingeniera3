@@ -1,11 +1,9 @@
 <div class="row form-group" style="background-color: #0e1a35;padding-bottom: 15px;">
-    <div class="col-sm-3" style="margin-top: 25px;">
-        <ol class="breadcrumb" style="    margin-bottom: 0;">
-            <li ng-class="{'active': breadcrumb.active }" ng-repeat="breadcrumb in $ctrl.headerBreadcrumbs track by $index">
-              <span ng-show="::!breadcrumb.link">{{breadcrumb.label}}</span>
-              <a ng-show="::breadcrumb.link" href="#{{breadcrumb.link}}">{{breadcrumb.label}}</a>
-            </li>
-        </ol>
+    <div class="col-sm-3" style="margin-top: 18px;">
+        <div class="has-feedback">
+            <i class="glyphicon glyphicon-filter form-control-feedback" style="top: 6px !important;"></i>
+            <input type="text" class="form-control input-lg" placeholder="Filtrar información" />
+        </div>  
     </div>
     <div class="col-sm-9" style="text-align:right; color: #ccc;">
         <h1>{{$ctrl.headerTitle}}</h1>

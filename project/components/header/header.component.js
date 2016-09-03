@@ -4,13 +4,10 @@
     angular
         .module('app.components')
         .component('headerComponent', {
-            templateUrl: '/project/components/header/header.html',
+            templateUrl: '/project/components/header/header.html?v=3',
             controller: headerComponentController,
             bindings: {
                 headerTitle: '<',
-                headerBreadcrumbs: '<',
-                //onUpdate: '&',
-                //cargando: '='
             }
         });
 

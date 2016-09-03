@@ -11,13 +11,6 @@
         
          vm.config_header = {
             title: 'Identificación de Riesgos',
-            breadcrumbs: [
-                {
-                    link: false,
-                    label: 'Listado',
-                    active: true,
-                },
-            ]
         }
         
         vm.categoria_riesgos = riesgosService.getCategorias();

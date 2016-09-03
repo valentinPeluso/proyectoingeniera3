@@ -4,28 +4,17 @@
     angular.module('app.requerimientos')
     .controller('requerimientosController', requerimientosController)
     
-    requerimientosController.$inject = ['ngToast','metricasService'];
+    requerimientosController.$inject = ['ngToast','metricasService','requerimientosService'];
     
-    function requerimientosController(ngToast,metricasService){
+    function requerimientosController(ngToast,metricasService,requerimientosService){
         var vm = this;
         
         vm.config_header = {
             title: 'Requerimientos de calidad de software',
-            breadcrumbs: [
-                {
-                    link: false,
-                    label: 'Listado',
-                    active: true,
-                },
-                {
-                    link: '/requerimientos/alta',
-                    label: 'Alta',
-                    active: false,
-                },
-            ]
         }
         
         vm.metricas = metricasService.get();
+        vm.restricciones = requerimientosService.getRestricciones();
         
         vm.requerimientos = [
             {
@@ -35,6 +24,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[8],
+                restricciones: [vm.restricciones[0],vm.restricciones[2]],
                 valor: 55,
             },
             {
@@ -44,6 +34,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[8],
+                restricciones: [vm.restricciones[1],vm.restricciones[2]],
                 valor: 55,
             },
             {
@@ -53,6 +44,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[7],
+                restricciones: [vm.restricciones[0],vm.restricciones[1]],
                 valor: 90,
             },
             {
@@ -62,6 +54,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[7],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 90,
             },
             {
@@ -71,6 +64,7 @@
                     label: 'Muy alta'
                 },
                 metrica: vm.metricas[7],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 95,
             },
             {
@@ -80,6 +74,7 @@
                     label: 'Muy alta'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [],
                 valor: 60,
             },
             {
@@ -89,6 +84,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [],
                 valor: 60,
             },
             {
@@ -98,6 +94,7 @@
                     label: 'imprescindible'
                 },
                 metrica: vm.metricas[3],
+                restricciones: [],
                 valor: 0,
             },
             {
@@ -107,6 +104,7 @@
                     label: 'imprescindible'
                 },
                 metrica: vm.metricas[3],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 0,
             },
             {
@@ -116,6 +114,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 65,
             },
             {
@@ -125,6 +124,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 65,
             },
             {
@@ -134,6 +134,7 @@
                     label: 'Muy alta'
                 },
                 metrica: vm.metricas[3],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 0,
             },
             {
@@ -143,6 +144,7 @@
                     label: 'Muy alta'
                 },
                 metrica: vm.metricas[3],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 0,
             },
             {
@@ -152,6 +154,7 @@
                     label: 'Baja'
                 },
                 metrica: vm.metricas[0],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -161,6 +164,7 @@
                     label: 'Muy baja'
                 },
                 metrica: vm.metricas[0],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 60,
             },
             {
@@ -170,6 +174,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -179,6 +184,8 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -188,6 +195,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -197,6 +205,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -206,6 +215,7 @@
                     label: 'Baja'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -215,6 +225,7 @@
                     label: 'Baja'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -224,6 +235,7 @@
                     label: 'Muy baja'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -233,6 +245,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 95,
             },
             {
@@ -242,6 +255,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 95,
             },
             {
@@ -251,6 +265,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[2],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 95,
             },
             {
@@ -260,6 +275,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -269,6 +285,7 @@
                     label: 'Alta'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -278,6 +295,7 @@
                     label: 'Media'
                 },
                 metrica: vm.metricas[5],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 75,
             },
             {
@@ -287,6 +305,7 @@
                     label: 'Muy alta'
                 },
                 metrica: vm.metricas[3],
+                restricciones: [vm.restricciones[0],vm.restricciones[1],vm.restricciones[2]],
                 valor: 5,
             },
             

@@ -9,10 +9,56 @@
         var service = {
             getCategorias: getCategorias,
             getImpactos: getImpactos,
-            getEstrategias: getEstrategias
+            getEstrategias: getEstrategias,
+            getResposables: getResposables
         };
 
         return service;
+        
+        function  getResposables() {
+            return [
+                {
+                    id: 0,
+                    label: 'Juan'
+                },
+                {
+                    id: 1,
+                    label: 'Mariano'
+                },
+                {
+                    id: 2,
+                    label: 'Sofía'
+                },
+                {
+                    id: 3,
+                    label: 'Pedro'
+                },
+                {
+                    id: 4,
+                    label: 'Micaela'
+                },
+                {
+                    id: 5,
+                    label: 'Carlos'
+                },
+                {
+                    id: 6,
+                    label: 'Laura'
+                },
+                {
+                    id: 7,
+                    label: 'Emma'
+                },
+                {
+                    id: 8,
+                    label: 'Matias'
+                },
+                {
+                    id: 9,
+                    label: 'Cristian'
+                },
+            ]
+        }
 
         function getCategorias() {
             return [

@@ -4,30 +4,26 @@
     angular.module('app.requerimientos')
     .controller('altaRequerimientoController', requerimientosController)
     
-    requerimientosController.$inject = ['ngToast'];
+    requerimientosController.$inject = ['ngToast','metricasService','requerimientosService'];
     
-    function requerimientosController(ngToast){
+    function requerimientosController(ngToast,metricasService,requerimientosService){
         var vm = this;
         
-        ngToast.create({
-          className: 'success',
-          content: '<a href="#" class="">a message</a>'
-        });
+        // ngToast.create({
+        //   className: 'success',
+        //   content: '<a href="#" class="">a message</a>'
+        // });
         
         vm.config_header = {
-            title: 'Crear requerimiento',
-            breadcrumbs: [
-                {
-                    link: '/requerimientos',
-                    label: 'Listado',
-                    active: false,
-                },
-                {
-                    link: false,
-                    label: 'Alta',
-                    active: true,
-                },
-            ]
+            title: 'Nuevo requerimiento',
+        }
+        
+        vm.metricas = metricasService.get();
+        vm.restricciones = requerimientosService.getRestricciones();
+        
+        vm.requerimiento ={
+            metrica: '',
+            restricciones: []
         }
     }
     

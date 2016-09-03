@@ -1,4 +1,4 @@
-<header-component header-title="vm.config_header.title" header-breadcrumbs="vm.config_header.breadcrumbs"></header-component>
+<header-component header-title="vm.config_header.title"></header-component>
 <div class="row form-group">
     <div class="col-sm-12">
         <table class="table table-bordered table-condensed">
@@ -20,7 +20,7 @@
                     <td>{{riesgo.impacto.label}}</td>
                     <td>{{riesgo.estrategia.label}}</td>
                     <td>{{riesgo.responsable}}</td>
-                    <td>
+                    <td style="padding-top: 10px;">
                         <span class="label " ng-class="{'label-info': riesgo.estado.id == 0, 'label-warning': riesgo.estado.id == 1}">{{riesgo.estado.label}}</span>
                     </td>
                 </tr>

@@ -1,0 +1,67 @@
+<header-component header-title="vm.config_header.title"></header-component>
+<div class="row form-group">
+    <div class="col-sm-12">
+        <form>
+          <div class="form-group">
+            <label for="descripcionRiesgo">Descripción del Riesgo</label>
+            <input type="text" class="form-control" id="descripcionRiesgo" placeholder="Descripción del Riesgo">
+          </div>
+          <div class="form-group">
+            <label for="probabilidad">Probabilidad</label>
+            <input type="number" class="form-control" id="probabilidad" placeholder="Probabilidad">
+            <p class="help-block">Establece la probabilidad de ocurrencia del riesgo dentro del proyecto.</p>
+          </div>
+          <div class="form-group">
+            <label for="estrategia">Responsable</label>
+             <ui-select ng-model="vm.riesgo.responsable" theme="bootstrap">
+                <ui-select-match placeholder="Responsable">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="responsable.id as responsable in vm.responsables_riesgos | filter: $select.search">
+                    <div ng-bind-html="(responsable.label | highlight: $select.search)"></div>
+                </ui-select-choices>
+            </ui-select>
+            <p class="help-block">Seleccione el resposable encargado de la supervisación del riesgo y de aplicar las estrategías.</p>
+          </div>
+          <hr />
+          <div class="form-group">
+            <label for="impacto">Impacto</label>
+             <ui-select ng-model="vm.riesgo.impacto" theme="bootstrap">
+                <ui-select-match placeholder="Impacto">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="impacto.id as impacto in vm.impacto_riesgos | filter: $select.search">
+                    <div ng-bind-html="(impacto.label | highlight: $select.search)"></div>
+                </ui-select-choices>
+            </ui-select>
+            <p class="help-block">Establece el impacto que generaría el riesgo al proyecto en caso de su ocurrencia.</p>
+          </div>
+          <div class="form-group">
+            <label for="descripcionImpacto">Descripción del Impacto</label>
+            <textarea class="form-control" rows="2" id="descripcionRiesgo" placeholder="Descripción del Impacto"></textarea>
+          </div>
+          <hr />
+           <div class="form-group">
+            <label for="estrategia">Estrategía</label>
+             <ui-select ng-model="vm.riesgo.estrategia" theme="bootstrap">
+                <ui-select-match placeholder="Estrategía">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="estrategia.id as estrategia in vm.estrategias_riesgos | filter: $select.search">
+                    <div ng-bind-html="(estrategia.label | highlight: $select.search)"></div>
+                </ui-select-choices>
+            </ui-select>
+            <p class="help-block">Establece la estrategía a seguir en caso de la ocurrencia del riesgo.</p>
+          </div>
+          <div class="form-group">
+            <label for="descripcionEstrategia">Descripción de la Estrategía a utilizar</label>
+            <textarea class="form-control" rows="2" id="descripcionEstrategia" placeholder="Descripción de la Estrategía a utilizar"></textarea>
+          </div>
+          <hr />
+          
+          <div class="row form-group">
+            <div class="col-sm-6">
+              
+            </div>
+            <div class="col-sm-6">
+               <button type="submit" class="btn btn-success btn-block">Guardar</button>
+            </div>
+          </div>
+         
+        </form>
+    </div>
+</div>

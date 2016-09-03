@@ -1,4 +1,9 @@
-<header-component header-title="vm.config_header.title" header-breadcrumbs="vm.config_header.breadcrumbs"></header-component>
+<header-component header-title="vm.config_header.title"></header-component>
+<div class="row form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+        <a href="#/requerimientos/alta" class="btn btn-success btn-block">Nuevo requerimiento</a>
+    </div>
+</div>
 <div class="row form-group">
     <div class="col-sm-12">
         <table class="table table-bordered table-condensed">
@@ -6,16 +11,14 @@
                 <tr>
                     <th colspan="2" style="text-align:center;">Generales</th>
                     <th colspan="2" style="text-align:center;">Factor</th>
-                    <th colspan="3" style="text-align:center;">Restricciones</th>
+                    <th style="text-align:center;">Restricciones</th>
                 </tr>
                 <tr>
                     <th>Descripción</th>
                     <th>Importancia</th>
                     <th>Métrica</th>
                     <th>Valor</th>
-                    <th>Costo</th>
-                    <th>Agenda</th>
-                    <th>Garantías</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,9 +27,9 @@
                     <td>{{req.importancia.label}}</td>
                     <td>{{req.metrica.label}}</td>
                     <td>{{req.valor}}%</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <span ng-repeat="res in req.restricciones track by $index">{{res.label}}&nbsp;</span>
+                    </td>
                 </tr>
             </tbody>
         </table>

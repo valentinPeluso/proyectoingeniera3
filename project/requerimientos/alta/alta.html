@@ -14,32 +14,38 @@
           </div>
           <h3>Factor</h3>
           <div class="form-group">
-            <label for="descripcionReq">Métrica (ui select)</label>
-            <!-- ui select -->
+            <label for="descripcionMetrica">Métrica</label>
+            <ui-select ng-model="vm.requerimiento.metrica" theme="bootstrap">
+                <ui-select-match placeholder="Responsable">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="metrica.id as metrica in vm.metricas | filter: $select.search">
+                    <div ng-bind-html="(metrica.label | highlight: $select.search)"></div>
+                </ui-select-choices>
+            </ui-select>
+            <p class="help-block">Seleccione la métrica que representa el factor.</p>
           </div>
           <div class="form-group">
             <label for="valor">Valor</label>
             <input type="number" class="form-control" id="valor" placeholder="Valor">
             <p class="help-block">Establece el valor que representa dicho factor. Sin este valor, no se dispone de un estándar que indique si el sistema alcanza o no este requerimiento</p>
           </div>
-          <h3>Restricciones</h3>
+          <hr/>
           <div class="form-group">
-            <label for="costo">Costo</label>
-            <input type="number" class="form-control" id="costo" placeholder="Costo">
-            <p class="help-block">Restricción de costos del requerimiento.</p>
+             <label for="restricciones">Restricciones</label>
+             <ui-select multiple ng-model="vm.requerimiento.restricciones" theme="bootstrap">
+                <ui-select-match placeholder="Responsable">{{$item.label}}</ui-select-match>
+                <ui-select-choices repeat="gar.id as gar in vm.restricciones | filter: $select.search">
+                    <div ng-bind-html="(gar.label | highlight: $select.search)"></div>
+                </ui-select-choices>
+            </ui-select>
+            <p class="help-block">Seleccione las restricciones a tener en cuenta por el requerimiento.</p>
           </div>
           <div class="form-group">
-            <label for="agenda">Agenda</label>
-            <input type="date" class="form-control" id="agenda" placeholder="Agenda">
-            <p class="help-block">Restricción de agenda del requerimiento.</p>
-          </div>
-          <div class="form-group">
-             <label for="garantiasintereses">Garantías e intereses organizacionales (ui select)</label>
-             <!-- ui select -->
+            <label for="descripcionRest">Descripción de las Restricciones</label>
+            <textarea rows="2" class="form-control" id="descripcionRest" placeholder="Descripción de las Restricciones"></textarea>
           </div>
           <div class="row form-group">
             <div class="col-sm-6">
-               <button type="submit" class="btn btn-default btn-block">Volver</button>
+              <a href="#/requerimientos" class="btn btn-default btn-block">Volver</a>
             </div>
             <div class="col-sm-6">
                <button type="submit" class="btn btn-success btn-block">Guardar</button>
