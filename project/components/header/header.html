@@ -2,7 +2,7 @@
     <div class="col-sm-3" style="margin-top: 18px;">
         <div class="has-feedback">
             <i class="glyphicon glyphicon-filter form-control-feedback" style="top: 6px !important;"></i>
-            <input type="text" class="form-control input-lg" placeholder="Filtrar información" />
+            <input type="text" class="form-control input-lg" ng-model="$ctrl.filtro" placeholder="Filtrar información" ng-keypress="$ctrl.filtrar()"  ng-keydown="$ctrl.filtrar()" ng-keyup="$ctrl.filtrar()" />
         </div>  
     </div>
     <div class="col-sm-9" style="text-align:right; color: #ccc;">

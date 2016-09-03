@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="req in vm.requerimientos | orderBy: '-importancia.id' track by $index">
+                <tr ng-repeat="req in vm.requerimientos | orderBy: '-importancia.id' | buscador track by $index">
                     <td>{{req.descripcion}}</td>
                     <td>{{req.importancia.label}}</td>
                     <td>{{req.metrica.label}}</td>

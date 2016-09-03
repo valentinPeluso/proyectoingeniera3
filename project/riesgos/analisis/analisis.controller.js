@@ -9,7 +9,7 @@
     function analisisController(riesgosService){
         var vm = this;
         
-         vm.config_header = {
+        vm.config_header = {
             title: 'Identificación de Riesgos',
         }
         
@@ -200,7 +200,7 @@
             }, 
            
             
-        ]
+        ];
         
     }
     

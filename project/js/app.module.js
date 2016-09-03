@@ -16,7 +16,9 @@
        'app.riesgos',
        'app.metricas',
        
-       'app.components'
+       'app.components',
+       'app.filters',
+       'app.services'
         
        
     ])

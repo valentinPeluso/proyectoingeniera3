@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="riesgo in vm.riesgos | orderBy: '-impacto.id' track by $index">
+                <tr ng-repeat="riesgo in vm.riesgos | orderBy: '-impacto.id' | buscador track by $index">
                     <td>{{riesgo.descripcion}}</td>
                     <td>{{riesgo.probabilidad}}</td>
                     <td>{{riesgo.impacto.label}}</td>
