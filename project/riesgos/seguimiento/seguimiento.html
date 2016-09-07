@@ -9,20 +9,21 @@
     <div class="col-sm-12">
         <table class="table table-bordered table-condensed">
             <thead>
-               
-                <tr>
-                    <th style="width: 25%;">Riesgo</th>
+                <tr class="info">
+                    <th style="width: 30%;">Riesgo</th>
                     <th style="width: 10%;">Probabilidad</th>
                     <th style="width: 10%;">Impacto</th>
                     <th style="width: 20%;">Estrategía</th>
                     <th style="width: 10%;">Responsable</th>
                     <th style="width: 10%;">¿Ocurrió?</th>
-                    <th style="width: 15%;">Planificación</th>
+                    <th style="width: 10%;">Planificación</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr ng-repeat="riesgo in vm.riesgos | orderBy: '-impacto.id' | buscador track by $index">
-                    <td>{{riesgo.descripcion}}</td>
+            <tbody ng-repeat="riesgo in vm.riesgos | orderBy: '-impacto.id' | buscador track by $index">
+                <tr>
+                    <td>
+                         <a href="#" editable-text="riesgo.descripcion">{{riesgo.descripcion}}</a>
+                    </td>
                     <td>
                         <a href="#" editable-text="riesgo.probabilidad">{{ riesgo.probabilidad || "-" }}</a>
                     </td>
@@ -44,15 +45,23 @@
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-sm" ng-disabled="riesgo.estado.id == 1" ng-class="{'btn-danger': riesgo.estado.id == 1,'btn-default': riesgo.estado.id == 0}">Si</button>
-                          <button type="button" class="btn btn-sm" ng-disabled="riesgo.estado.id == 0" ng-class="{'btn-success': riesgo.estado.id == 0,'btn-default': riesgo.estado.id == 1}">No</button>
+                          <button type="button" class="btn btn-sm" ng-click="riesgo.estado = {id: 1,label: 'Ocurrido'}" ng-disabled="riesgo.estado.id == 1" ng-class="{'btn-danger': riesgo.estado.id == 1,'btn-default': riesgo.estado.id == 0}">Si</button>
+                          <button type="button" class="btn btn-sm" ng-click="riesgo.estado = {id: 0,label: 'No ocurrido'}"  ng-disabled="riesgo.estado.id == 0" ng-class="{'btn-success': riesgo.estado.id == 0,'btn-default': riesgo.estado.id == 1}">No</button>
                         </div>
                     </td>
                     <td>
-                         <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-sm btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button>
-                          <button type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square" aria-hidden="true"></i> Editar</button>
-                        </div>
+                        <button type="button" class="btn btn-sm btn-info" ng-click="riesgo.mostrar_estrategia =! riesgo.mostrar_estrategia">
+                            <span ng-show="!riesgo.mostrar_estrategia">Ver <i class="fa fa-chevron-right" aria-hidden="true" ></i> </span>
+                            <span ng-show="riesgo.mostrar_estrategia">Ocultar <i class="fa fa-chevron-down" aria-hidden="true" ></i></span>
+                        </button>
+                         
+                    </td>
+                </tr>
+                <tr class="info" ng-show="riesgo.mostrar_estrategia">
+                    <td colspan="7">
+                         <a href="#" editable-textarea="riesgo.estrategia_descripcion" e-rows="10" e-cols="100">
+                            <span>{{riesgo.estrategia_descripcion}}</span>
+                         </a>
                     </td>
                 </tr>
             </tbody>

@@ -25,6 +25,7 @@
               probabilidad: "80%",
               impacto: vm.impacto_riesgos[2].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[0].id,
               estado: {
                   id: 0,
@@ -37,6 +38,7 @@
               probabilidad: "70%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[1].id,
               estado: {
                   id: 0,
@@ -49,6 +51,7 @@
               probabilidad: "70%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[2].id,
               estado: {
                   id: 0,
@@ -61,6 +64,7 @@
               probabilidad: "50%",
               impacto: vm.impacto_riesgos[2].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[5].id,
               estado: {
                   id: 0,
@@ -73,6 +77,7 @@
               probabilidad: "50%",
               impacto: vm.impacto_riesgos[2].id,
               estrategia: vm.estrategias_riesgos[1].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[4].id,
               estado: {
                   id: 1,
@@ -85,6 +90,7 @@
               probabilidad: "65%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[6].id,
               estado: {
                   id: 0,
@@ -97,6 +103,7 @@
               probabilidad: "60%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[2].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[2].id,
               estado: {
                   id: 1,
@@ -109,6 +116,7 @@
               probabilidad: "40%",
               impacto: vm.impacto_riesgos[2].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[3].id,
               estado: {
                   id: 0,
@@ -121,6 +129,7 @@
               probabilidad: "30%",
               impacto: vm.impacto_riesgos[2].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[4].id,
               estado: {
                   id: 1,
@@ -133,6 +142,7 @@
               probabilidad: "40%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[1].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[5].id,
               estado: {
                   id: 0,
@@ -145,6 +155,7 @@
               probabilidad: "35%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[2].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[0].id,
               estado: {
                   id: 0,
@@ -157,6 +168,7 @@
               probabilidad: "30%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[2].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[1].id,
               estado: {
                   id: 0,
@@ -169,6 +181,7 @@
               probabilidad: "20%",
               impacto: vm.impacto_riesgos[4].id,
               estrategia: vm.estrategias_riesgos[1].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[3].id,
               estado: {
                   id: 0,
@@ -181,6 +194,7 @@
               probabilidad: "25%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[1].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[4].id,
               estado: {
                   id: 0,
@@ -193,6 +207,7 @@
               probabilidad: "25%",
               impacto: vm.impacto_riesgos[3].id,
               estrategia: vm.estrategias_riesgos[0].id,
+              estrategia_descripcion: "Descripcion estrategia",
               responsable: vm.responsables[2].id,
               estado: {
                   id: 0,
